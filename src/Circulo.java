@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 public class Circulo extends Forma {
     public Circulo(double raio){
@@ -40,4 +42,5 @@ public class Circulo extends Forma {
                 "\nÁrea=" + area +
                 "\nPerímetro=" + perimetro;
     }
+    teste
 }
