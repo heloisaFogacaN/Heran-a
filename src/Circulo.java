@@ -1,5 +1,10 @@
 import java.util.ArrayList;
 public class Circulo extends Forma {
+    public Circulo(double raio){
+        this.setPerimetro(raio);
+        this.setArea(raio);
+        Forma.adicionarForma(this);
+    }
 
     double  raio;
 
@@ -19,6 +24,15 @@ public class Circulo extends Forma {
         this.area = 3.14*(raio*raio);
     }
 
+//    public static void listarCirculos() {
+//        System.out.println("oi");
+//        int i = 1;
+//        for (Circulo circulo : circulos) {
+//            System.out.println("oiiiii");
+//            System.out.println("Circulo-" + i + circulo.toString() + "\n");
+//            i++;
+//        }
+//    }
     @Override
     public String toString() {
         return " " +

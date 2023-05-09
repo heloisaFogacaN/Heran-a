@@ -12,30 +12,6 @@ public class Triangulo extends Forma {
         this.tipo = tipo;
     }
 
-    public double getLado1() {
-        return lado1;
-    }
-
-    public double getLado2() {
-        return lado2;
-    }
-
-    public double getLado3() {
-        return lado3;
-    }
-
-    public void setLado1(double lado1) {
-        this.lado1 = lado1;
-    }
-
-    public void setLado2(double lado2) {
-        this.lado2 = lado2;
-    }
-
-    public void setLado3(double lado3) {
-        this.lado3 = lado3;
-    }
-
     public static Triangulo defineTipo(double lado1, double lado2, double lado3) {
         if (lado1 == lado2 && lado1 == lado3) {
             return new TrianguloEquilatero(lado1);
@@ -47,6 +23,14 @@ public class Triangulo extends Forma {
         }
         return null;
     }
+//    public static void listarTriangulos() {
+//        int i=1;
+//        for (Triangulo triangulo: triangulos) {
+//            System.out.println("Triângulo-" + i  + triangulo.toString() + "\n");
+//            i++;
+//        }
+//
+//    }
 
     @Override
     public String toString() {

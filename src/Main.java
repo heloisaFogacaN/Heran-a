@@ -13,7 +13,6 @@ public class Main {
     }
     public static void cadastrar() {
         Professor professor = new Professor("123");
-        Professor.professores.add(professor);
     }
 
     private static void login() {
@@ -90,16 +89,16 @@ public class Main {
             opcao=scanner.nextInt();
             switch (opcao){
                 case 1:
-                    listarCirculos();
+                    Circulo.listarCirculos();
                     break;
                 case 2:
-                    listarQuadrados();
+                    Quadrado.listarQuadrados();
                     break;
                 case 3:
-                    listarRetangulos();
+                    Retangulo.listarRetangulos();
                     break;
                 case 4:
-                    listarTriangulos();
+                    Triangulo.listarTriangulos();
                     break;
                 case 5:
                     listarTodasFormas();
@@ -126,16 +125,13 @@ public class Main {
     }
 
     private static void cadastrarRetangulo() {
-        Retangulo retangulo= new Retangulo();
         System.out.println("Informe o valor do comprimento do retângulo:");
-        retangulo.setLado1(scanner.nextDouble());
+        double lado1= scanner.nextDouble();
         System.out.println("Informe o valor da base do retângulo:");
-        retangulo.setLado2(scanner.nextDouble());
-        retangulo.setArea(retangulo.getlado1(), retangulo.getLado2());
-        retangulo.setPerimetro(retangulo.getlado1(), retangulo.getLado2());
-        if(retangulo.getlado1()!=retangulo.getLado2()){
+        double lado2=scanner.nextDouble();
+        if(lado1!=lado2){
             System.out.println("As medidas fornecidas coorespodem a um retângulo!");
-            Forma.adicionarForma(retangulo);
+            Forma forma = new Retangulo(lado1, lado2);
         } else{
             System.out.println("Retângulo inválido!");
         }
@@ -143,57 +139,19 @@ public class Main {
     }
 
     private static void cadastrarQuadrado() {
-        Quadrado quadrado=new Quadrado();
         System.out.println("Informe o valor do lado do quadrado");
-        quadrado.setLado1(scanner.nextDouble());
-        quadrado.setArea(quadrado.getLado1());
-        quadrado.setPerimetro(quadrado.getLado1());
-        Forma.adicionarForma(quadrado);
+        double lado1= scanner.nextDouble();
+        Forma forma = new Quadrado(lado1);
 
     }
 
     private static void cadastrarCirculo() {
-        Circulo circulo=new Circulo();
         System.out.println("Informe o valor do raio:");
-        circulo.setRaio(scanner.nextDouble());
-        circulo.setArea(circulo.getRaio());
-        circulo.setPerimetro(circulo.getRaio());
-        Forma.adicionarForma(circulo);
-    }
-
-    private static void listarQuadrados() {
-        int i=1;
-        for (Quadrado quadrado : Quadrado.quadrados) {
-            System.out.println("Quadrado-" + i  + quadrado.toString() + "\n");
-            i++;
-        }
+        double raio=scanner.nextDouble();
+        Forma forma = new Circulo(raio);
 
     }
-    private static void listarTriangulos() {
-        int i=1;
-        for (Triangulo triangulo: Triangulo.triangulos) {
-            System.out.println("Triângulo-" + i  + triangulo.toString() + "\n");
-            i++;
-        }
 
-    }
-    private static void listarRetangulos() {
-        int i=1;
-        for (Retangulo retangulo : Retangulo.retangulos) {
-            System.out.println("Retângulo-" + i  + retangulo.toString() + "\n");
-            i++;
-        }
-
-    }
-    private static void listarCirculos() {
-        System.out.println("oi");
-        int i = 1;
-        for (Circulo circulo : Circulo.circulos) {
-            System.out.println("oiiiii");
-            System.out.println("Circulo-" + i + circulo.toString() + "\n");
-            i++;
-        }
-    }
     private static void listarTodasFormas(){
         int i=1;
         for(Forma forma: Forma.formas){

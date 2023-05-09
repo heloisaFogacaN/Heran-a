@@ -1,6 +1,14 @@
 import java.util.ArrayList;
 public class Retangulo extends Forma{
 
+    public Retangulo(double lado1, double lado2){
+        this.lado1=lado1;
+        this.lado2=lado2;
+        this.setArea(lado1, lado2);
+        this.setPerimetro(lado1, lado2);
+
+    }
+
     public void setLado1(double lado1) {
         this.lado1 = lado1;
     }
@@ -24,6 +32,15 @@ public class Retangulo extends Forma{
     public double getLado2() {
         return lado2;
     }
+
+//    public static void listarRetangulos() {
+//        int i=1;
+//        for (Retangulo retangulo : retangulos) {
+//            System.out.println("Retângulo-" + i  + retangulo.toString() + "\n");
+//            i++;
+//        }
+//
+//    }
 
     @Override
     public String toString() {
