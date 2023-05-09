@@ -42,5 +42,4 @@ public class Circulo extends Forma {
                 "\nÁrea=" + area +
                 "\nPerímetro=" + perimetro;
     }
-    teste
 }
