@@ -93,35 +93,20 @@ public class Main {
             opcao=scanner.nextInt();
             switch (opcao){
                 case 1:
-                    for (Forma forma: Forma.formas){
-                        if (forma instanceof Circulo){
-                            System.out.println(forma);
-                        }
-                    }
+                    Forma.mostrarCirculo();
+
                     break;
                 case 2:
-                    for (Forma forma: Forma.formas){
-                        if (forma instanceof Quadrado){
-                            System.out.println(forma);
-                        }
-                    }
+                    Forma.mostrarQuadrado();
                     break;
                 case 3:
-                    for (Forma forma: Forma.formas){
-                        if (forma instanceof Retangulo){
-                            System.out.println(forma);
-                        }
-                    }
+                   Forma.mostrarRetangulo();
                     break;
                 case 4:
-                    for (Forma forma: Forma.formas){
-                        if (forma instanceof Triangulo){
-                            System.out.println(forma);
-                        }
-                    }
+                    Forma.mostrarTriangulo();
                     break;
                 case 5:
-                    listarTodasFormas();
+                    Forma.mostrarTodos();
                     break;
             }
         } while(opcao!=0);

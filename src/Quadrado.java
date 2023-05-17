@@ -15,7 +15,6 @@ public class Quadrado extends Forma {
         return perimetro = lado1*4;
     }
 
-
     @Override
     public String toString() {
         return " " +

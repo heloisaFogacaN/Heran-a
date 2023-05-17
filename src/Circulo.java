@@ -15,6 +15,8 @@ public class Circulo extends Forma {
 
     public double calArea() {
         return area = 3.14*(raio*raio);
+
+
     }
 
     @Override
