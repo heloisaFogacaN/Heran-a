@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class Triangulo extends Forma {
+public abstract class Triangulo extends Forma {
     String tipo;
 
     public Triangulo(double lado1, double lado2, double lado3){
@@ -23,14 +23,6 @@ public class Triangulo extends Forma {
         }
         return null;
     }
-//    public static void listarTriangulos() {
-//        int i=1;
-//        for (Triangulo triangulo: triangulos) {
-//            System.out.println("Triângulo-" + i  + triangulo.toString() + "\n");
-//            i++;
-//        }
-//
-//    }
 
     @Override
     public String toString() {

@@ -3,16 +3,22 @@ import javax.swing.text.InternationalFormatter;
 import java.text.Normalizer;
 import java.util.Scanner;
 public class Main {
-    private static Professor  professorLogado;
+    private static Professor professorLogado;
     static Scanner scanner=new Scanner(System.in);
 
     public static void main(String[] args) {
+        Forma forma2= new Quadrado(2);
+        forma2.calArea();
+        Quadrado forma3= new Quadrado(2);
+        forma3.calArea();
         cadastrar();
         login();
 
     }
+
     public static void cadastrar() {
         Professor professor = new Professor("123");
+        Professor.professores.add(professor);
     }
 
     private static void login() {
@@ -29,8 +35,6 @@ public class Main {
             } else {
                 if (contador < 3) {
                     System.out.println("Senha inválida!\nTente novamente\nVocê ainda possui " + (3 - contador) + " tentativas!");
-                } else if (contador == 3) {
-                    System.out.println("Tentativas esgotadas");
                 }
                 contador++;
             }
@@ -89,16 +93,32 @@ public class Main {
             opcao=scanner.nextInt();
             switch (opcao){
                 case 1:
-                    Circulo.listarCirculos();
+                    for (Forma forma: Forma.formas){
+                        if (forma instanceof Circulo){
+                            System.out.println(forma);
+                        }
+                    }
                     break;
                 case 2:
-                    Quadrado.listarQuadrados();
+                    for (Forma forma: Forma.formas){
+                        if (forma instanceof Quadrado){
+                            System.out.println(forma);
+                        }
+                    }
                     break;
                 case 3:
-                    Retangulo.listarRetangulos();
+                    for (Forma forma: Forma.formas){
+                        if (forma instanceof Retangulo){
+                            System.out.println(forma);
+                        }
+                    }
                     break;
                 case 4:
-                    Triangulo.listarTriangulos();
+                    for (Forma forma: Forma.formas){
+                        if (forma instanceof Triangulo){
+                            System.out.println(forma);
+                        }
+                    }
                     break;
                 case 5:
                     listarTodasFormas();

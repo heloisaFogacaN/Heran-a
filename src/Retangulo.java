@@ -4,8 +4,8 @@ public class Retangulo extends Forma{
     public Retangulo(double lado1, double lado2){
         this.lado1=lado1;
         this.lado2=lado2;
-        this.setArea(lado1, lado2);
-        this.setPerimetro(lado1, lado2);
+        this.calArea();
+        this.calPerimetro();
 
     }
 
@@ -17,12 +17,12 @@ public class Retangulo extends Forma{
         this.lado2 = lado2;
     }
 
-    public void setArea(double lado1, double lado2) {
-        this.area = lado1*lado2;
+    public double calArea() {
+        return area = lado1*lado2;
     }
 
-    public void setPerimetro(double lado1, double lado2) {
-        this.perimetro = 2*(lado1 + lado2);
+    public double calPerimetro() {
+        return perimetro = 2*(lado1 + lado2);
     }
 
     public double getlado1() {
@@ -33,14 +33,6 @@ public class Retangulo extends Forma{
         return lado2;
     }
 
-//    public static void listarRetangulos() {
-//        int i=1;
-//        for (Retangulo retangulo : retangulos) {
-//            System.out.println("Retângulo-" + i  + retangulo.toString() + "\n");
-//            i++;
-//        }
-//
-//    }
 
     @Override
     public String toString() {

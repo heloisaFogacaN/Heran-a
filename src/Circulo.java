@@ -3,38 +3,20 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 public class Circulo extends Forma {
     public Circulo(double raio){
-        this.setPerimetro(raio);
-        this.setArea(raio);
+        this.raio=raio;
+        this.calPerimetro();
+        this.calArea();
         Forma.adicionarForma(this);
     }
 
-    double  raio;
-
-    public void setRaio(double raio) {
-        this.raio = raio;
+    public double calPerimetro() {
+        return perimetro = 3.14*2*raio;
     }
 
-    public double getRaio() {
-        return raio;
+    public double calArea() {
+        return area = 3.14*(raio*raio);
     }
 
-    public void setPerimetro(double raio) {
-        this.perimetro = 3.14*2*raio;
-    }
-
-    public void setArea(double raio) {
-        this.area = 3.14*(raio*raio);
-    }
-
-//    public static void listarCirculos() {
-//        System.out.println("oi");
-//        int i = 1;
-//        for (Circulo circulo : circulos) {
-//            System.out.println("oiiiii");
-//            System.out.println("Circulo-" + i + circulo.toString() + "\n");
-//            i++;
-//        }
-//    }
     @Override
     public String toString() {
         return " " +
