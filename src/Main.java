@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
         Forma forma2= new Quadrado(2);
-        forma2.calArea();
+        forma2.calcArea();
         Quadrado forma3= new Quadrado(2);
-        forma3.calArea();
+        forma3.calcArea();
         cadastrar();
         login();
 
@@ -91,19 +91,23 @@ public class Main {
                 0- Voltar ao Menu 
                 """);
             opcao=scanner.nextInt();
+            String forma= "";
             switch (opcao){
                 case 1:
-                    Forma.mostrarCirculo();
-
+                    forma= Circulo.mostrarObjetos();
+                    System.out.println(forma);
                     break;
                 case 2:
-                    Forma.mostrarQuadrado();
+                    forma=Quadrado.mostrarObjetos();
+                    System.out.println(forma);
                     break;
                 case 3:
-                   Forma.mostrarRetangulo();
+                    forma=Retangulo.mostrarObjetos();
+                    System.out.println(forma);
                     break;
                 case 4:
-                    Forma.mostrarTriangulo();
+                    forma=Triangulo.mostrarObjetos();
+                    System.out.println(forma);
                     break;
                 case 5:
                     Forma.mostrarTodos();
@@ -140,29 +144,17 @@ public class Main {
         } else{
             System.out.println("Retângulo inválido!");
         }
-
     }
 
     private static void cadastrarQuadrado() {
         System.out.println("Informe o valor do lado do quadrado");
         double lado1= scanner.nextDouble();
         Forma forma = new Quadrado(lado1);
-
     }
 
     private static void cadastrarCirculo() {
         System.out.println("Informe o valor do raio:");
         double raio=scanner.nextDouble();
         Forma forma = new Circulo(raio);
-
-    }
-
-    private static void listarTodasFormas(){
-        int i=1;
-        for(Forma forma: Forma.formas){
-            System.out.println("Forma-"+ i+ forma.toString() + "\n");
-            i++;
-        }
-
     }
 }

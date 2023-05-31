@@ -4,43 +4,37 @@ public class Retangulo extends Forma{
     public Retangulo(double lado1, double lado2){
         this.lado1=lado1;
         this.lado2=lado2;
-        this.calArea();
-        this.calPerimetro();
-
+        this.calcArea();
+        this.calcPerimetro();
+        Forma.adicionarForma(this);
     }
 
-    public void setLado1(double lado1) {
-        this.lado1 = lado1;
-    }
-
-    public void setLado2(double lado2) {
-        this.lado2 = lado2;
-    }
-
-    public double calArea() {
+    @Override
+    public double calcArea() {
         return area = lado1*lado2;
     }
 
-    public double calPerimetro() {
+    @Override
+    public double calcPerimetro() {
         return perimetro = 2*(lado1 + lado2);
     }
 
-    public double getlado1() {
-        return lado1;
+    public static String mostrarObjetos() {
+        String objetos="";
+            for (Forma forma: Forma.formas){
+                if (forma instanceof Retangulo){
+                    objetos+=forma+"\n";
+                }
+            }
+            return objetos;
     }
-
-    public double getLado2() {
-        return lado2;
-    }
-
 
     @Override
     public String toString() {
-        return " " +
-                "\nComprimento=" + lado1 +
-                "\nBase=" + lado2 +
-                "\nÁrea=" + area +
-                "\nPerímetro=" + perimetro;
+        return "Retângulo:"+
+                "\n Lado 1: "+lado1+
+                "\n Lado 2: "+lado2+
+                "\n Perimetro: "+perimetro+
+                "\n Área: "+area;
     }
-
 }

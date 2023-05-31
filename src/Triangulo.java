@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 public abstract class Triangulo extends Forma {
     String tipo;
 
@@ -6,8 +5,11 @@ public abstract class Triangulo extends Forma {
         this.lado1=lado1;
         this.lado2=lado2;
         this.lado3=lado3;
-
+        this.calcPerimetro();
+        this.calcArea();
+        Forma.adicionarForma(this);
     }
+
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
@@ -24,14 +26,29 @@ public abstract class Triangulo extends Forma {
         return null;
     }
 
+    public static String mostrarObjetos() {
+        String objetos="";
+            for (Forma forma: Forma.formas){
+                if (forma instanceof Triangulo){
+                   objetos+=forma+"\n";
+                }
+            }
+        return objetos;
+    }
+
+    @Override
+    public double calcPerimetro() {
+        return lado1+lado2+lado3;
+    }
+
     @Override
     public String toString() {
-        return " " +
-                "\nTipo= " + tipo+
-                "\nLado 1=" + lado1 +
-                "\nLado 2=" + lado2 +
-                "\nLado 3=" + lado3+
-                "\nPerímetro=" +perimetro+
-                "\nÁrea="+ area;
+        return "Triângulo:"+
+                "\n"+tipo+
+                "\n Lado 1: "+lado1+
+                "\n Lado 2: "+lado2+
+                "\n Lado 3: "+lado3+
+                "\n Perimetro: "+perimetro+
+                "\n Área: "+area;
     }
 }

@@ -1,11 +1,10 @@
 public class TrianguloIsosceles extends Triangulo{
     public TrianguloIsosceles(double lado1,double lado2, double lado3){
         super(lado1, lado2, lado3);
-        this.calArea();
-        this.calPerimetro();
+        this.calcArea();
         this.setTipo("Isósceles");
     }
-    public double calArea() {
+    public double calcArea() {
         if(lado1==lado2){
             double altura= (Math.sqrt(lado2*lado2)-((lado3*lado3)/4));
             area=(lado3*altura)/2;
@@ -18,16 +17,6 @@ public class TrianguloIsosceles extends Triangulo{
 
         }
         return area;
-    }
-    public double calPerimetro() {
-        if(lado1==lado2){
-            perimetro=lado3+2*lado1;
-        } else if(lado2==lado3){
-           perimetro=lado1+2*lado2;
-        } else if(lado1==lado3){
-            perimetro=lado2+2*lado1;
-        }
-        return perimetro;
     }
 
 }
