@@ -35,6 +35,6 @@ public class Retangulo extends Forma{
                 "\n Lado 1: "+lado1+
                 "\n Lado 2: "+lado2+
                 "\n Perimetro: "+perimetro+
-                "\n Área: "+area;
+                "\n Área: "+area+"\n";
     }
 }

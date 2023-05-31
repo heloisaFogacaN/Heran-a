@@ -7,10 +7,6 @@ public class Main {
     static Scanner scanner=new Scanner(System.in);
 
     public static void main(String[] args) {
-        Forma forma2= new Quadrado(2);
-        forma2.calcArea();
-        Quadrado forma3= new Quadrado(2);
-        forma3.calcArea();
         cadastrar();
         login();
 

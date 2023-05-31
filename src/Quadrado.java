@@ -29,12 +29,11 @@ public class Quadrado extends Forma {
         return objetos;
     }
 
-
     @Override
     public String toString() {
         return "Quadrado: " +
                 "\nLado=" + lado1 +
                 "\nÁrea=" + area +
-                "\nPerímetro=" + perimetro;
+                "\nPerímetro=" + perimetro+"\n";
     }
 }

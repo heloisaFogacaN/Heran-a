@@ -34,6 +34,6 @@ public class Circulo extends Forma {
         return "Círculo:" +
                 "\nRaio=" + raio +
                 "\nÁrea=" + area +
-                "\nPerímetro=" + perimetro;
+                "\nPerímetro=" + perimetro+"\n";
     }
 }

@@ -49,6 +49,6 @@ public abstract class Triangulo extends Forma {
                 "\n Lado 2: "+lado2+
                 "\n Lado 3: "+lado3+
                 "\n Perimetro: "+perimetro+
-                "\n Área: "+area;
+                "\n Área: "+area+"\n";
     }
 }
