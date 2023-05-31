@@ -27,8 +27,6 @@ public class Main {
             System.out.println("Informe sua senha:");
             String senha = scanner.next();
             professorLogado= Professor.verificadorSenha(senha);
-            System.out.println(professorLogado);
-
             if (professorLogado != null ) {
                 System.out.println("Bem-vindo!");
                 menu();
